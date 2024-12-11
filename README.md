@@ -3,13 +3,13 @@
 Yuhong Chou*, Man Yao*, Kexin Wang, Yuqi Pan, Ruijie Zhu, Yiran Zhong, Yu Qiao, Jibin Wu, Bo Xu, Guoqi Li
 
 Paper: [https://arxiv.org/abs/2411.10741](https://arxiv.org/abs/2411.10741)  
-Hugging Face Models: [Checkpoints](https://github.com/BICLab/MetaLA) 
+Hugging Face Models: [Checkpoints 🤗](https://huggingface.co/Pantch/MetaLA)
 
 🚀 Our paper has been accepted as **Oral in NeurIPS2024**.
 
 ## About MetaLA
 
-Various linear complexity models (LinFormer, SSM, LinRNN) have been proposed. However, the optimal design of these linear models is still an open question. This work abstracts existing linear models into a **unified linear attention form**. We then identify **necessary conditions** for achieving “optimal linear approximation to softmax attention map": 1) Dynamic memory ability; 2) Static approximation ability; 3) Least parameter approximation. We find that none of the current linear models meet all three conditions, resulting in suboptimal performance. Instead, we propose **MetaLA** as a solution that satisfies these conditions. Our experiments on MQAR, language modeling, image classification, LRA, MAD, NIAH, and efficiency benchmark show the effectiveness of MetaLA.  
+Various linear complexity models (LinFormer, SSM, LinRNN) have been proposed. However, the optimal design of these linear models is still an open question. This work abstracts existing linear models into a _**unified linear attention form**_. We then identify _**necessary conditions**_ for achieving “optimal linear approximation to softmax attention map": 1) Dynamic memory ability; 2) Static approximation ability; 3) Least parameter approximation. We find that none of the current linear models meet all three conditions, resulting in suboptimal performance. Instead, we propose _**MetaLA**_ as a solution that satisfies these conditions. Our experiments on MQAR, language modeling, image classification, LRA, MAD, NIAH, and efficiency benchmark show the effectiveness of MetaLA.  
 
 ![General Form](./assets/general_form.jpg "General Form")
 
@@ -60,7 +60,7 @@ model = MetaLAForCausalLM(MetaLAConfig()).cuda()
 print(model)
 ```
 
-You can download our [released checkpoints](https://github.com/BICLab/MetaLA) to perform generation as follows:
+You can download our [released checkpoints](https://huggingface.co/Pantch/MetaLA) to perform generation as follows:
 
 ```python
 import torch
@@ -90,7 +90,7 @@ We also provide a simple example [here](./test_generation.py).
 
 ## Available Models
 
-We released MetaLA checkpoints ranging in size from 380M to 3B, all trained with 300B tokens. Dowload from [here](https://github.com/BICLab/MetaLA).
+We released MetaLA checkpoints ranging in size from 380M to 3B, all trained with 300B tokens. Dowload from [here 🤗](https://huggingface.co/Pantch/MetaLA).
 
 Some results on the CommonSense Reasoning benchmark are  as follows:
 
