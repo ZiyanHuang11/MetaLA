@@ -22,9 +22,9 @@ inputs = tokenizer(prompts, padding=True, truncation=True, max_length=512, retur
 print(inputs.input_ids.shape)
 
 outputs = model.generate(inputs.input_ids, do_sample=False, max_new_tokens=256, attention_mask=inputs.attention_mask)
+response = tokenizer.batch_decode(outputs, skip_special_tokens=True)
 
 for i in range(len(prompts)):
-    response = tokenizer.decode(outputs[i], skip_special_tokens=True)
     print("=====Begin======")
-    print(response)
+    print(response[i])
     print("======End======")
