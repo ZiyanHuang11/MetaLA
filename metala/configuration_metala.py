@@ -12,7 +12,7 @@ LLAMA_PRETRAINED_CONFIG_ARCHIVE_MAP = {}
 
 class MetaLAConfig(PretrainedConfig):
     model_type = "metala"
-    keys_to_ignore_at_inference = ["past_key_values"]
+    keys_to_ignore_at_inference = ["past_key_values"]//不需要缓存past_key的值。
 
     def __init__(
         self,
@@ -22,17 +22,18 @@ class MetaLAConfig(PretrainedConfig):
         vocab_size=32000,
         use_cache=True,
         init_std=0.02,
+        
         # model config
         decoder_embed_dim=1024,
         decoder_layers=24,
         decoder_attention_heads=8,
         add_bos_token=False,
-        causal=True,
+        causal=True,//自回归
         glu_act="silu",
         glu_dim=5632,
-        bias=False,
+        bias=False,//不含偏置项
         norm_type="simplermsnorm",
-        no_scale_embedding=True,
+        no_scale_embedding=True,//缩放嵌入
         **kwargs,
     ):
         super().__init__(
